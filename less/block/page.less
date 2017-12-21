@@ -1,0 +1,35 @@
+.page {
+  &:extend(.container);
+  min-height: calc(~"100vh - 451px");
+
+  &__inside {
+    font: 700 27px/1 "Geometria","Arial",sans-serif;
+    text-transform: uppercase;
+    margin: 40px 0;
+    text-align: center;
+  }
+
+  &__img {
+    float: left;
+    width: 490px;
+    overflow: hidden;
+    margin-right: 15px;
+    margin-bottom: 10px;
+  }
+
+  &__data {
+    display: block;
+    margin-bottom: 10px;
+    color: @gray-darken;
+
+    &:hover {
+      color: @gray-darken;
+    }
+  }
+
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}

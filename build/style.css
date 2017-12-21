@@ -522,7 +522,8 @@ pre code {
 .contact,
 .map__container,
 .about-us,
-.why-us__list {
+.why-us__list,
+.page {
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
@@ -6116,6 +6117,35 @@ img {
 .block-color {
   background: #333;
 }
+.page {
+  min-height: calc(100vh - 451px);
+}
+.page__inside {
+  font: 700 27px/1 "Geometria", "Arial", sans-serif;
+  text-transform: uppercase;
+  margin: 40px 0;
+  text-align: center;
+}
+.page__img {
+  float: left;
+  width: 490px;
+  overflow: hidden;
+  margin-right: 15px;
+  margin-bottom: 10px;
+}
+.page__data {
+  display: block;
+  margin-bottom: 10px;
+  color: #4d4d4d;
+}
+.page__data:hover {
+  color: #4d4d4d;
+}
+.page::after {
+  content: '';
+  display: table;
+  clear: both;
+}
 @media (min-width: 480px) {
   .main-title {
     font: 900 40px "Geometria", "Arial", sans-serif;
@@ -6216,7 +6246,8 @@ img {
   .contact,
   .map__container,
   .about-us,
-  .why-us__list {
+  .why-us__list,
+  .page {
     max-width: 540px;
   }
   .col-sm {
@@ -6917,7 +6948,8 @@ img {
   .contact,
   .map__container,
   .about-us,
-  .why-us__list {
+  .why-us__list,
+  .page {
     max-width: 720px;
   }
   .col-md {
@@ -7521,7 +7553,8 @@ img {
   .contact,
   .map__container,
   .about-us,
-  .why-us__list {
+  .why-us__list,
+  .page {
     max-width: 960px;
   }
   .col-lg {
@@ -8222,7 +8255,8 @@ img {
   .contact,
   .map__container,
   .about-us,
-  .why-us__list {
+  .why-us__list,
+  .page {
     max-width: 1140px;
   }
   .col-xl {
