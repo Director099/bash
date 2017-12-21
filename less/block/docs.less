@@ -1,0 +1,46 @@
+.docs {
+  position: relative;
+
+
+  &__link {
+    display: block;
+    margin-bottom: 10px;
+
+    &--1 {
+      position: relative;
+
+      @media(min-width: @screen-lg) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+      }
+    }
+
+    &--2 {
+      position: relative;
+
+      @media(min-width: @screen-lg) {
+        position: absolute;
+        bottom: 40px;
+        left: 90px;
+        z-index: 2;
+      }
+    }
+
+    &--3 {
+      position: relative;
+
+      @media(min-width: @screen-lg) {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 49%;
+      }
+    }
+  }
+
+  @media(min-width: @screen-lg) {
+    height: 540px;
+  }
+}

@@ -1,0 +1,43 @@
+.form-lectures {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  &__control {
+    display: block;
+    width: 100%;
+    font-size: @font-size--small;
+    border: 1px dashed @white;
+    background: transparent;
+    padding: 15px;
+    text-transform: uppercase;
+    color: @white;
+    margin-bottom: 15px;
+
+    &::-webkit-input-placeholder {color:@white;}
+    &::-moz-placeholder          {color:@white;}
+    &:-moz-placeholder           {color:@white;}
+    &:-ms-input-placeholder      {color:@white;}
+
+    @media(min-width: @screen-md) {
+      width: 23%;
+      margin-bottom: 0;
+    }
+  }
+
+  &__btn {
+    font: 700 16px "Geometria", "Arial", sans-serif;;
+    padding: 25px 45px;
+    color: @gray-darker;
+    background: @color-warning;
+    border-radius: 50px;
+    border: none;
+    margin-top: 50px;
+    text-transform: uppercase;
+    // text-shadow: 0 0 1px @black;
+
+    @media(min-width: @screen-sm) {
+      font: @font-btn;
+    }
+  }
+}

@@ -1,0 +1,46 @@
+.advantages {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 45px;
+  margin-bottom: 20px;
+
+  &__item {
+    align-self: center;
+    text-transform: uppercase;
+    font: @font-text;
+    width: 100%;
+    padding-left: 50px;
+    padding-right: 5px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: @white;
+
+
+    &--job {
+      background: url("img/icon/calendar.png") no-repeat 0% 50%;
+      background-size: 30px;
+    }
+
+    &--teach {
+      background: url("img/icon/ru.png") no-repeat 0% 50%;
+      background-size: 35px;
+    }
+
+    &--doc {
+      background: url("img/icon/note.png") no-repeat 0% 50%;
+      background-size: 30px;
+    }
+
+    &--dep {
+      background: url("img/icon/car.png") no-repeat 0% 50%;
+      background-size: 35px;
+    }
+
+    @media(min-width: @screen-xs) {
+      width: 50%;
+    }
+  }
+}

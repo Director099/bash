@@ -1,0 +1,43 @@
+.news {
+  background: @white;
+
+  &__block {
+    padding: 0 25px 25px;
+    border-top: 1px solid @gray-lightest;
+  }
+
+  &__title {
+    font: @font-text;
+    line-height: 1.4;
+    font-weight: 400;
+    padding: 15px 25px 0;
+    height: 67px;
+    overflow: hidden;
+  }
+
+  &__img {
+    max-height: 113px;
+    overflow: hidden;
+  }
+
+  &__text {
+    font: @font-news;
+    color: #728097;
+    height: 150px;
+    overflow: hidden;
+    margin-bottom: 15px;
+  }
+
+  &__time {
+    display: block;
+    padding: 15px 0;
+
+    span {
+      color: #dc6151;
+    }
+  }
+
+  &__more {
+    color: @black;
+  }
+}

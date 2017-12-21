@@ -1,0 +1,48 @@
+body {
+  font: 400 @font-size "Geometria", "Arial", sans-serif;
+  color: @text-color;
+}
+
+a {
+  color: @color-link;
+  cursor: pointer;
+  transition: @transition-time;
+
+  &:hover {
+    text-decoration: none;
+    color: @color-link--hover;
+  }
+}
+
+button {
+  transition: @transition-time;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+}
+
+:focus {
+  outline: none;
+}
+
+.main-title {
+  max-width: 620px;
+  font: 900 27px "Geometria", "Arial", sans-serif;
+  color: @white;
+  text-transform: uppercase;
+  text-shadow: 0 0 2px @black;
+
+  span {
+    font-size: 40px;
+  }
+
+  @media(min-width: @screen-sm) {
+    font: @font-size--main-title;
+
+    span {
+      font-size: 52px;
+    }
+  }
+}

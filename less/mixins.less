@@ -1,0 +1,56 @@
+.padding-ident() {
+  @pt: 60px;
+  padding-top: @pt;
+  padding-bottom: @pt;
+}
+
+.title() {
+  font: 700 27px "Geometria", "Arial", sans-serif;
+  color: @white;
+  text-transform: uppercase;
+
+  span {
+    color: @color-warning;
+  }
+
+  @media(min-width: @screen-sm) {
+    font: @font-h2;
+  }
+}
+
+.title-2() {
+  font: 700 27px "Geometria", "Arial", sans-serif;
+  color: @black;
+  text-transform: uppercase;
+  margin-bottom: 0;
+
+  span {
+    display: block;
+    font-weight: 700;
+  }
+
+  @media(min-width: @screen-sm) {
+    font: @font-h2;
+  }
+}
+
+.title-3() {
+  font: 700 27px/1 "Geometria", "Arial", sans-serif;
+  color: @gray-darker;
+  text-transform: uppercase;
+  margin-bottom: 0;
+
+  span {
+    display: block;
+    font-weight: 700;
+    font-size: 30px;
+  }
+
+  @media(min-width: @screen-sm) {
+    font: 700 40px/1 "Geometria", "Arial", sans-serif;
+
+    span {
+      font-size: 45px;
+    }
+  }
+}

@@ -1,0 +1,70 @@
+.form-more {
+  background: @white;
+  border-radius: @border-radius;
+  max-width: 360px;
+  // margin: 0 auto;
+  padding: 0 30px 30px;
+
+
+  &__title {
+    text-transform: uppercase;
+    font: @font-h3;
+    color: @white;
+    margin: 0 -30px;
+    text-shadow: 0 0 2px @black;
+    text-align: center;
+    padding: 20px 25px;
+    border-top-right-radius: @border-radius;
+    border-top-left-radius:  @border-radius;
+    background: @color-warning;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    margin: 35px 0 20px;
+    padding: 0;
+
+    li {
+      width: 50%;
+      padding-left: 20px;
+      margin-bottom: 20px;
+      font-size: 15px;
+      background: url("img/sprite/gear.svg") no-repeat 0% 3px;
+      background-size: 11px;
+    }
+  }
+
+  &__control {
+    width: 100%;
+    margin-bottom: 10px;
+    background: @gray-lightest;
+    padding: 15px 20px;
+    border: none;
+    border-radius: @border-radius;
+  }
+
+  &__btn {
+    font: 700 14px "Geometria", "Arial", sans-serif;
+    text-transform: uppercase;
+    color: @white;
+    background: @color-btn;
+    border: none;
+    border-radius: @border-radius;
+    box-shadow: 0 0 10px 1px fade(@black, 50%);
+    width: 100%;
+    padding: 15px 0;
+    margin-top: 20px;
+
+    @media(min-width: @screen-sm) {
+      font: @font-text;
+    }
+  }
+
+  @media(min-width: @screen-lg) {
+    margin-top: -60px;
+    margin-left: auto;
+    margin-bottom: 0;
+  }
+}

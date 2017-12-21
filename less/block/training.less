@@ -1,0 +1,28 @@
+.training {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__column {
+    width: 100%;
+
+    &--bg {
+      position: relative;
+      background: url("img/bg-training.jpg") no-repeat top;
+      background-size: cover;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: fade(@color-warning, 80%);
+      }
+    }
+
+    @media(min-width: @screen-lg) {
+      width: 50%;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+.page-header {
+  &:extend(.container);
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-top: 30px;
+  margin-bottom: 20px;
+
+  @media(min-width: @screen-lg) {
+    justify-content: space-between;
+    margin-bottom: 100px;
+  }
+}

@@ -1,0 +1,87 @@
+.step {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  position: relative;
+  max-width: 550px;
+  margin-right: auto;
+  margin-top: 60px;
+  margin-left: auto;
+  padding-left: 0;
+  list-style-type: none;
+  z-index: 9;
+
+  &__item {
+    font: @font-text;
+    color: @white;
+    text-transform: uppercase;
+    width: 50%;
+    margin-bottom: 40px;
+    text-align: center;
+
+    &--top {
+      transform: translateY(-45px);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+      margin-top: 25px;
+    }
+  }
+
+  &__img {
+    display: flex;
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    background: fade(@color-btn, 95%);
+
+    .icon {
+      margin: auto;
+      fill: @white;
+    }
+  }
+
+  @media(min-width: @screen-xs) {
+    background: url("img/dushed.png") no-repeat;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: -60px;
+      left: 0;
+      width: 1px;
+      height: 60px;
+      border: 1px dashed #fff;
+    }
+  }
+
+  @media(min-width: @screen-lg) {
+    margin-right: auto;
+    margin-left: inherit;
+    margin-top: 150px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: -39px;
+      // height: 20px;
+      border: 40px solid transparent;
+      border-left: 40px solid @color-btn;
+      z-index: 9;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: -20px;
+      border: 20px solid transparent;
+      border-left: 20px solid @white;
+      z-index: 99;
+    }
+  }
+}

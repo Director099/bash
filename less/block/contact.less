@@ -1,0 +1,44 @@
+.contact {
+  &:extend(.container);
+  .padding-ident();
+
+  &__row {
+    &:extend(.row);
+    align-items: flex-start;
+
+    @media(min-width: @screen-lg) {
+      align-items: center;
+    }
+  }
+
+  &__column {
+    &:extend(.col-md-6);
+  }
+
+  &__title {
+    position: relative;
+    max-width: 275px;
+    .title-2();
+    margin-bottom: 20px;
+
+    @media(min-width: @screen-md) {
+      margin-bottom: 0;
+    }
+
+    @media(min-width: @screen-sm) {
+      // margin-bottom: 0;
+
+      &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 11px;
+        width: 35px;
+        height: 15px;
+        transform: rotate(-90deg);
+        background: url("img/icon/arrow-bottom.png") no-repeat;
+        background-size: contain;
+      }
+    }
+  }
+}

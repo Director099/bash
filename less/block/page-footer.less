@@ -1,0 +1,17 @@
+.page-footer {
+  background: @gray-darker;
+  .padding-ident();
+
+  &__container {
+    &:extend(.container);
+  }
+
+  &__row {
+    &:extend(.row);
+    align-items: center;
+  }
+
+  &__column {
+    &:extend(.col-md-4);
+  }
+}

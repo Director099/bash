@@ -1,0 +1,28 @@
+.we-training {
+  background: url("img/bg-we-train.jpg") no-repeat;
+  background-size: cover;
+  .padding-ident();
+
+  &__container {
+    &:extend(.container);
+  }
+
+  &__title {
+    .title();
+    margin-bottom: 60px;
+  }
+
+  .teacher .item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // width: 200px;
+    margin: 0 auto;
+    max-width: 200px;
+    height: 130px;
+  }
+
+  .teacher .item img {
+    width: auto;
+  }
+}

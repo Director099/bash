@@ -1,0 +1,44 @@
+.form-quest {
+  background: @white;
+  max-width: 555px;
+  width: 100%;
+  margin-left: auto;
+  padding: 0 25px 25px;
+  border-radius: @border-radius;
+  transform: translateY(30px);
+
+  &__title {
+    text-transform: uppercase;
+    font: @font-h3;
+    color: @white;
+    margin: 0 -25px 20px;
+    text-shadow: 0 0 2px @black;
+    text-align: center;
+    padding: 20px 25px;
+    border-top-right-radius: @border-radius;
+    border-top-left-radius: @border-radius;
+    background: @color-warning;
+  }
+
+  &__control {
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 10px;
+    background: @gray-lightest;
+    padding: 15px 20px;
+  }
+
+  &__btn {
+    font: 700 18px "Geometria","Arial",sans-serif;
+    text-transform: uppercase;
+    color: @white;
+    background: @color-btn;
+    box-shadow: 0 0 10px 1px rgba(0,0,0,.5);
+    padding: 15px 0;
+    margin-top: 20px;
+    border: none;
+    border-radius: @border-radius;
+    width: 100%;
+  }
+}

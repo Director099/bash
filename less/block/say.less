@@ -1,0 +1,68 @@
+.say {
+  padding-left: 0px;
+
+  &__title {
+    .title-2();
+    text-align: center;
+  }
+
+  &__quote {
+    position: relative;
+    padding: 20px;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    text-indent: 15px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0px;
+      top: 0;
+      width: 20px;
+      height: 20px;
+      background: url("img/quo-top.png") no-repeat;
+      background-size: contain !important;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      right: 0px;
+      bottom: 0;
+      width: 20px;
+      height: 20px;
+      background: url("img/quo-bottom.png") no-repeat;
+      background-size: contain !important;
+    }
+
+    @media(min-width: @screen-lg) {
+      padding: 40px;
+
+      &::before {
+        width: 40px;
+        height: 40px;
+      }
+
+      &::after {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+
+  &__avtor {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 0;
+
+    cite {
+      font: @font-text;
+      margin-bottom: 10px;
+    }
+  }
+
+  @media(min-width: @screen-lg) {
+    padding-left: 50px;
+  }
+}

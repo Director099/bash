@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bashprotect</title>
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.min.css">
+</head>
+
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="clock" viewBox="0 0 24 24">
+      <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm1 12v-6h-2v8h7v-2h-5z" />
+    </symbol>
+    <symbol id="card" viewBox="0 0 24 24">
+      <path d="M14 18.597v.403h-10v-.417c-.004-1.112.044-1.747 1.324-2.043 1.403-.324 2.787-.613 2.122-1.841-1.973-3.637-.563-5.699 1.554-5.699 2.077 0 3.521 1.985 1.556 5.699-.647 1.22.688 1.51 2.121 1.841 1.284.297 1.328.936 1.323 2.057zm6-9.597h-4v2h4v-2zm0 4h-4v2h4v-2zm0 4h-4v2h4v-2zm-4-12v2h6v14h-20v-14h6v-2h-8v18h24v-18h-8zm-6-4v6h4v-6h-4zm2 4c-.552 0-1-.448-1-1s.448-1 1-1 1 .448 1 1-.448 1-1 1z" />
+    </symbol>
+    <symbol id="money" viewBox="0 0 24 24">
+      <path d="M22 7h-19v11h-1v-12h20v1zm-2-2h-19v11h-1v-12h20v1zm-6 6c-1.656 0-3 1.344-3 3s1.344 3 3 3 3-1.344 3-3-1.344-3-3-3zm.15 4.484v.315h-.3v-.299c-.311-.005-.632-.079-.898-.217l.135-.493c.287.11.669.229.968.162.345-.078.415-.433.034-.604-.279-.129-1.133-.242-1.133-.973 0-.409.312-.775.895-.855v-.319h.301v.305c.217.006.461.043.732.126l-.108.493c-.23-.08-.485-.154-.733-.139-.446.026-.486.413-.174.575.514.242 1.182.42 1.182 1.063 0 .516-.404.791-.901.86zm-10.15-7.484v12h20v-12h-20zm18 10h-16v-8h16v8z" />
+    </symbol>
+    <symbol fill-rule="evenodd" clip-rule="evenodd" id="school" viewBox="0 0 24 24">
+      <path d="M15.996 23.999h-12.605s.734-3.931.633-5.686c-.041-.724-.161-1.474-.54-2.104-.645-1-2.636-3.72-2.475-7.43.224-5.209 4.693-8.779 10.126-8.779 5.098 0 8.507 3.001 9.858 7.483.328 1.079.311 1.541-.151 2.607l-.006.013 1.751 2.142c.26.381.413.791.413 1.239 0 .547-.233 1.045-.61 1.399-.368.345-.767.452-1.248.642 0 0-.576 2.592-.873 3.291-.7 1.643-1.97 1.659-2.97 1.849-.394.083-.49.133-.681.681-.208.591-.363 1.435-.622 2.653m-4.842-22c-4.285.048-7.74 2.548-8.121 6.488-.192 1.991.463 3.986 1.516 5.705.611 1 1.305 1.592 1.464 3.875.091 1.313-.05 2.636-.241 3.932h8.604c.141-.645.35-1.485.687-2.057.449-.766 1.097-1.099 1.926-1.254.838-.148 1.238-.059 1.489-.785.212-.579.612-2.221.831-3.902 1.203-.335.612-.161 1.671-.559-.206-.234-1.918-2.314-2.045-2.6-.336-.759-.046-1.19.225-1.913.086-.251.06-.357-.009-.613-1.049-3.949-3.891-6.317-7.997-6.317m.52 3c.242.684.312 1.122.841 1.341h.001c.53.221.893-.044 1.543-.353l.953.952c-.312.655-.573 1.016-.354 1.544v.001c.219.528.653.597 1.342.841v1.347c-.681.243-1.123.313-1.342.843-.22.529.043.891.354 1.544l-.953.952c-.657-.313-1.014-.574-1.541-.355h-.001c-.531.222-.601.661-.843 1.343h-1.348c-.242-.684-.312-1.122-.841-1.34l-.001-.001c-.529-.221-.892.043-1.544.353l-.952-.952c.305-.643.574-1.011.353-1.545-.22-.529-.661-.599-1.341-.842v-1.347c.681-.242 1.121-.312 1.341-.841.22-.531-.042-.891-.353-1.545l.952-.952c.657.312 1.015.573 1.544.353h.001c.529-.219.599-.661.841-1.341h1.348zm-.674 6.667c-.92 0-1.667-.746-1.667-1.667s.747-1.667 1.667-1.667 1.666.746 1.666 1.667-.746 1.667-1.666 1.667" />
+    </symbol>
+    <symbol id="arrow-down" viewBox="0 0 24 24">
+      <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
+    </symbol>
+    <symbol id="file" viewBox="0 0 24 24">
+      <path d="M16 0h-14v24h20v-18l-6-6zm0 3l3 3h-3v-3zm-12 19v-20h10v6h6v14h-16z" />
+    </symbol>
+    <symbol id="pen" viewBox="0 0 24 24">
+      <path d="M15.812 4.819c-.33-.341-.312-.877.028-1.207l3.469-3.365c.17-.164.387-.247.603-.247.219 0 .438.085.604.257l-4.704 4.562zm-5.705 8.572c-.07.069-.107.162-.107.255 0 .194.158.354.354.354.089 0 .178-.033.247-.1l.583-.567-.493-.509-.584.567zm4.924-6.552l-1.994 1.933c-1.072 1.039-1.619 2.046-2.124 3.451l.881.909c1.419-.461 2.442-.976 3.514-2.016l1.994-1.934-2.271-2.343zm5.816-5.958l-5.137 4.982 2.586 2.671 5.138-4.98c.377-.366.566-.851.566-1.337 0-1.624-1.968-2.486-3.153-1.336zm-11.847 12.119h-4v1h4v-1zm9-1.35v1.893c0 4.107-6 2.457-6 2.457s1.518 6-2.638 6h-7.362v-20h12.629l2.062-2h-16.691v24h10.189c3.163 0 9.811-7.223 9.811-9.614v-4.687l-2 1.951z" />
+    </symbol>
+    <symbol id="computer" viewBox="0 0 24 24">
+      <path d="M0 0v19h24v-19h-24zm22 17h-20v-15h20v15zm-6.599 4l2.599 3h-12l2.599-3h6.802zm-6.401-16l6 4.674-2.538.427 1.538 3.095-1.571.804-1.546-3.157-1.883 1.759v-7.602z" />
+    </symbol>
+    <symbol fill-rule="evenodd" clip-rule="evenodd" id="school" viewBox="0 0 24 24">
+      <path d="M22 0v14.386c0 2.391-6.648 9.614-9.811 9.614h-10.189v-24h20zm-10.638 22c4.156 0 2.638-6 2.638-6s6 1.65 6-2.457v-11.543h-16v20h7.362zm.638-4v1h-5v-1h5zm-5-2h5v1h-5v-1zm0-2h10v1h-10v-1zm0-2h10v1h-10v-1zm3.691-3.174l-2.055.001-.39 1.172-1.246.001 2.113-5.689 1.086-.001 2.133 5.686-1.246.001-.395-1.171zm4.373-2.015l1.41-.001.001 1.019-1.41.001.001 1.594-1.074.001-.001-1.594-1.414.001-.001-1.019 1.414-.001-.001-1.528h1.074l.001 1.527zm-6.112 1.067l1.422-.001-.717-2.129-.705 2.13z" />
+    </symbol>
+    <symbol id="id-card" viewBox="0 0 24 24">
+      <path d="M13.84 14.31c-.295.522-.517 1.09-.659 1.69h-9.181v-.417c-.004-1.112.044-1.747 1.324-2.043 1.402-.324 2.787-.613 2.121-1.841-1.972-3.637-.562-5.699 1.555-5.699 2.077 0 3.521 1.985 1.556 5.699-.647 1.22.688 1.51 2.121 1.841.672.155 1 .407 1.163.77zm-.815 3.69h-11.025v-14h20v7.5c.749.312 1.424.763 2 1.316v-10.816h-24v18h13.5c-.26-.623-.421-1.296-.475-2zm6.975-9h-4v2h4v-2zm-4-1h4v-2h-4v2zm3.5 5c-2.486 0-4.5 2.015-4.5 4.5s2.014 4.5 4.5 4.5c2.484 0 4.5-2.015 4.5-4.5s-2.016-4.5-4.5-4.5zm-.469 6.484l-1.688-1.637.695-.697.992.94 2.115-2.169.697.696-2.811 2.867z" />
+    </symbol>
+    <symbol id="im" viewBox="0 0 169.063 169.063">
+      <path d="M122.406 0H46.654C20.929 0 0 20.93 0 46.655v75.752c0 25.726 20.929 46.655 46.654 46.655h75.752c25.727 0 46.656-20.93 46.656-46.655V46.655C169.063 20.93 148.133 0 122.406 0zm31.657 122.407c0 17.455-14.201 31.655-31.656 31.655H46.654C29.2 154.063 15 139.862 15 122.407V46.655C15 29.201 29.2 15 46.654 15h75.752c17.455 0 31.656 14.201 31.656 31.655v75.752z" />
+      <path d="M84.531 40.97c-24.021 0-43.563 19.542-43.563 43.563 0 24.02 19.542 43.561 43.563 43.561s43.563-19.541 43.563-43.561c0-24.021-19.542-43.563-43.563-43.563zm0 72.123c-15.749 0-28.563-12.812-28.563-28.561 0-15.75 12.813-28.563 28.563-28.563s28.563 12.813 28.563 28.563c0 15.749-12.814 28.561-28.563 28.561zM129.921 28.251c-2.89 0-5.729 1.17-7.77 3.22a11.053 11.053 0 0 0-3.23 7.78c0 2.891 1.18 5.73 3.23 7.78 2.04 2.04 4.88 3.22 7.77 3.22 2.9 0 5.73-1.18 7.78-3.22 2.05-2.05 3.22-4.89 3.22-7.78 0-2.9-1.17-5.74-3.22-7.78-2.04-2.05-4.88-3.22-7.78-3.22z" />
+    </symbol>
+    <symbol id="lindk" viewBox="0 0 24 24">
+      <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
+    </symbol>
+    <symbol id="facebook" viewBox="0 0 96.124 96.123">
+      <path d="M72.089.02L59.624 0C45.62 0 36.57 9.285 36.57 23.656v10.907H24.037a1.96 1.96 0 0 0-1.96 1.961v15.803a1.96 1.96 0 0 0 1.96 1.96H36.57v39.876a1.96 1.96 0 0 0 1.96 1.96h16.352a1.96 1.96 0 0 0 1.96-1.96V54.287h14.654a1.96 1.96 0 0 0 1.96-1.96l.006-15.803a1.963 1.963 0 0 0-1.961-1.961H56.842v-9.246c0-4.444 1.059-6.7 6.848-6.7l8.397-.003a1.96 1.96 0 0 0 1.959-1.96V1.98A1.96 1.96 0 0 0 72.089.02z" />
+    </symbol>
+  </svg>
+  <div class="modal fade" id="modal-window" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-call">
+          <h5 class="modal-call__title" id="exampleModalLabel">Оставьте свой телефон</h5>
+          <p class="modal-call__text">и мы перезвоним Вам</p>
+          <button type="button" class="modal-call__close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <form class="modal-form" action="">
+            <input class="modal-form__control" type="text" placeholder="Имя" name="name" required>
+            <input class="modal-form__control" type="text" placeholder="Телефон" name="tel" required>
+            <button type="button" class="modal-form__btn">Отправить</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="fullpage">
+    <div class="fullpage__block-top">
+      <header class="page-header">
+        <a class="logo" href="index.html">
+          <img src="img/logo.png" alt="Лого">
+        </a>
+        <p class="numbers">
+          <a class="numbers__phone" href="#">8 800 365-00-11</a>
+          <button class="numbers__callback" data-toggle="modal" data-target="#modal-window">Заказать звонок</button>
+        </p>
+      </header>
+      <div class="container">
+        <div class="row">
+          <section class="col-lg-7">
+            <h1 class="main-title">подготовка, переподготовка <span>рабочих профессий</span></h1>
+            <ul class="advantages">
+              <li class="advantages__item advantages__item--job">Работаем с 2002г.</li>
+              <li class="advantages__item advantages__item--teach">обучаем по всей россии</li>
+              <li class="advantages__item advantages__item--doc">официальный документ</li>
+              <li class="advantages__item advantages__item--dep">выезд преподавателя</li>
+            </ul>
+          </section>
+          <div class="col-lg-5">
+            <form class="form-more" action="">
+              <h3 class="form-more__title">узнайте подробнее:</h3>
+              <ul class="form-more__list">
+                <li>Цены</li>
+                <li>Формы обучения</li>
+                <li>Программы</li>
+                <li>Сроки</li>
+              </ul>
+              <input class="form-more__control" type="text" placeholder="Имя" required>
+              <input class="form-more__control" type="tel" placeholder="Телефон" required>
+              <button class="form-more__btn">Проконсультироваться</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="suggestions">
+        <div class="suggestions__container">
+          <div class="suggestions__row">
+            <div class="suggestions__column">
+              <ul class="suggestions__list">
+                <li class="suggestions__item">
+                  <span class="">Повысим</span> квалификацию
+                </li>
+                <li class="suggestions__item">
+                  <span class="size-midle">Выдадим</span> удостоверение
+                </li>
+                <li class="suggestions__item suggestions__item--size-big">
+                  <span>Подскажем</span> после обучения
+                </li>
+              </ul>
+            </div>
+            <div class="suggestions__column--2">
+              <p class="suggestions__social">
+                <a href="#">facebook
+                  <svg class="icon" width="25" height="25">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#facebook"></use>
+                  </svg>
+                </a>
+                <a href="#">instagram
+                  <svg class="icon" width="25" height="25">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#im"></use>
+                  </svg>
+                </a>
+                <a href="#">lindenkin
+                  <svg class="icon" width="25" height="25">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lindk"></use>
+                  </svg>
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section class="directions">
+      <h2 class="directions__title">направления обучения</h2>
+      <div class="accordion" id="accordion" role="tablist">
+        <section class="accordion__set">
+          <a class="accordion__title collapsed" role="tab" data-toggle="collapse" href="#collapse-1" aria-expanded="false" aria-controls="collapse-1">
+            <h3 class="name">Пожарная безопасность</h3>
+            <svg class="arrow-down" width="30" height="20">
+              <use xlink:href="#arrow-down" />
+            </svg>
+          </a>
+          <div id="collapse-1" class="collapse" role="tabpanel" data-parent="#accordion">
+            <ul class="list-training">
+              <li class="list-training__item">
+                <div class="list-training__circle">
+                  <svg class="icon" width="40" height="40">
+                    <use xlink:href="#clock" />
+                  </svg>
+                </div>
+                <strong>Время обучения:</strong> 24-80 часов
+              </li>
+              <li class="list-training__item">
+                <div class="list-training__circle">
+                  <svg class="icon" width="40" height="40">
+                    <use xlink:href="#card" />
+                  </svg>
+                </div>
+                По окончании курса удостоверение установленного образца
+              </li>
+              <li class="list-training__item">
+                <div class="list-training__circle">
+                  <svg class="icon" width="40" height="40">
+                    <use xlink:href="#money" />
+                  </svg>
+                </div>
+                <strong>Стоимость:</strong> От 2500 Р
+              </li>
+              <li class="list-training__item">
+                <div class="list-training__circle">
+                  <svg class="icon" width="40" height="40">
+                    <use xlink:href="#school" />
+                  </svg>
+                </div>
+                <strong>Форматы обучения:</strong>
+                <ul class="list-training__list">
+                  <li>Очное</li>
+                  <li>С выездом специалиста</li>
+                  <li>Видеокурсы/вебинары</li>
+                </ul>
+              </li>
+            </ul>
+            <form class="form-accordion" action="">
+              <section class="form-accordion__container">
+                <h4 class="form-accordion__title">Остались вопросы?</h4>
+                <input class="form-accordion__control" type="text" placeholder="Имя">
+                <input class="form-accordion__control" type="text" placeholder="Телефон">
+                <button class="form-accordion__btn">проконсультироваться</button>
+              </section>
+            </form>
+          </div>
+        </section>
+        <section class="accordion__set">
+          <a class="accordion__title collapsed" role="tab" data-toggle="collapse" href="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+            <h3 class="name">Пожарно-технический минимум</h3>
+            <svg class="arrow-down" width="30" height="20">
+              <use xlink:href="#arrow-down" />
+            </svg>
+          </a>
+          <div id="collapse-2" class="collapse" role="tabpanel" data-parent="#accordion">
+            <ul class="list-training">
+              <li class="list-training__item">
+                <div class="list-training__circle">
+                  <svg class="icon" width="40" height="40">
+                    <use xlink:href="#clock" />
+                  </svg>
+                </div>
+                <strong>Время обучения:</strong> 24-80 часов
+              </li>
+              <li class="list-training__item">
+                <div class="list-training__circle">
+                  <svg class="icon" width="40" height="40">
+                    <use xlink:href="#card" />
+                  </svg>
+                </div>
+                По окончании курса удостоверение установленного образца
+              </li>
+              <li class="list-training__item">
+                <div class="list-training__circle">
+                  <svg class="icon" width="40" height="40">
+                    <use xlink:href="#money" />
+                  </svg>
+                </div>
+                <strong>Стоимость:</strong> От 2500 Р
+              </li>
+              <li class="list-training__item">
+                <div class="list-training__circle">
+                  <svg class="icon" width="40" height="40">
+                    <use xlink:href="#school" />
+                  </svg>
+                </div>
+                <strong>Форматы обучения:</strong>
+                <ul class="list-training__list">
+                  <li>Очное</li>
+                  <li>С выездом специалиста</li>
+                  <li>Видеокурсы/вебинары</li>
+                </ul>
+              </li>
+            </ul>
+            <form class="form-accordion" action="">
+              <section class="form-accordion__container">
+                <h4 class="form-accordion__title">Остались вопросы?</h4>
+                <input class="form-accordion__control" type="text" placeholder="Имя">
+                <input class="form-accordion__control" type="text" placeholder="Телефон">
+                <button class="form-accordion__btn">проконсультироваться</button>
+              </section>
+            </form>
+          </div>
+        </section>
+        <section class="accordion__set">
+          <a class="accordion__title collapsed" role="tab" data-toggle="collapse" href="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
+            <h3 class="name">Безопасность строительства</h3>
+            <svg class="arrow-down" width="30" height="20">
+              <use xlink:href="#arrow-down" />
+            </svg>
+          </a>
+          <div id="collapse-3" class="collapse" role="tabpanel" data-parent="#accordion">
+            <ul class="list-training">
+              <li class="list-training__item">
+                <div class="list-training__circle">
+                  <svg class="icon" width="40" height="40">
+                    <use xlink:href="#clock" />
+                  </svg>
+                </div>
+                <strong>Время обучения:</strong> 24-80 часов
+              </li>
+              <li class="list-training__item">
+                <div class="list-training__circle">
+                  <svg class="icon" width="40" height="40">
+                    <use xlink:href="#card" />
+                  </svg>
+                </div>
+                По окончании курса удостоверение установленного образца
+              </li>
+              <li class="list-training__item">
+                <div class="list-training__circle">
+                  <svg class="icon" width="40" height="40">
+                    <use xlink:href="#money" />
+                  </svg>
+                </div>
+                <strong>Стоимость:</strong> От 2500 Р
+              </li>
+              <li class="list-training__item">
+                <div class="list-training__circle">
+                  <svg class="icon" width="40" height="40">
+                    <use xlink:href="#school" />
+                  </svg>
+                </div>
+                <strong>Форматы обучения:</strong>
+                <ul class="list-training__list">
+                  <li>Очное</li>
+                  <li>С выездом специалиста</li>
+                  <li>Видеокурсы/вебинары</li>
+                </ul>
+              </li>
+            </ul>
+            <form class="form-accordion" action="">
+              <section class="form-accordion__container">
+                <h4 class="form-accordion__title">Остались вопросы?</h4>
+                <input class="form-accordion__control" type="text" placeholder="Имя">
+                <input class="form-accordion__control" type="text" placeholder="Телефон">
+                <button class="form-accordion__btn">проконсультироваться</button>
+              </section>
+            </form>
+          </div>
+        </section>
+        <section class="accordion__set">
+          <a class="accordion__title collapsed" role="tab" data-toggle="collapse" href="#collapse-4" aria-expanded="false" aria-controls="collapse-4">
+            <h3 class="name">Изыскания и проектирование</h3>
+            <svg class="arrow-down" width="30" height="20">
+              <use xlink:href="#arrow-down" />
+            </svg>
+          </a>
+          <div id="collapse-4" class="collapse" role="tabpanel" data-parent="#accordion">
+            <ul class="list-training">
+              <li class="list-training__item">
+                <div class="list-training__circle">
+                  <svg class="icon" width="40" height="40">
+                    <use xlink:href="#clock" />
+                  </svg>
+                </div>
+                <strong>Время обучения:</strong> 24-80 часов
+              </li>
+              <li class="list-training__item">
+                <div class="list-training__circle">
+                  <svg class="icon" width="40" height="40">
+                    <use xlink:href="#card" />
+                  </svg>
+                </div>
+                По окончании курса удостоверение установленного образца
+              </li>
+              <li class="list-training__item">
+                <div class="list-training__circle">
+                  <svg class="icon" width="40" height="40">
+                    <use xlink:href="#money" />
+                  </svg>
+                </div>
+                <strong>Стоимость:</strong> От 2500 Р
+              </li>
+              <li class="list-training__item">
+                <div class="list-training__circle">
+                  <svg class="icon" width="40" height="40">
+                    <use xlink:href="#school" />
+                  </svg>
+                </div>
+                <strong>Форматы обучения:</strong>
+                <ul class="list-training__list">
+                  <li>Очное</li>
+                  <li>С выездом специалиста</li>
+                  <li>Видеокурсы/вебинары</li>
+                </ul>
+              </li>
+            </ul>
+            <form class="form-accordion" action="">
+              <section class="form-accordion__container">
+                <h4 class="form-accordion__title">Остались вопросы?</h4>
+                <input class="form-accordion__control" type="text" placeholder="Имя">
+                <input class="form-accordion__control" type="text" placeholder="Телефон">
+                <button class="form-accordion__btn">проконсультироваться</button>
+              </section>
+            </form>
+          </div>
+        </section>
+        <section class="accordion__set">
+          <a class="accordion__title collapsed" role="tab" data-toggle="collapse" href="#collapse-5" aria-expanded="false" aria-controls="collapse-5">
+            <h3 class="name">Охрана труда</h3>
+            <svg class="arrow-down" width="30" height="20">
+              <use xlink:href="#arrow-down" />
+            </svg>
+          </a>
+          <div id="collapse-5" class="collapse" role="tabpanel" data-parent="#accordion">
+            <ul class="list-training">
+              <li class="list-training__item">
+                <div class="list-training__circle">
+                  <svg class="icon" width="40" height="40">
+                    <use xlink:href="#clock" />
+                  </svg>
+                </div>
+                <strong>Время обучения:</strong> 24-80 часов
+              </li>
+              <li class="list-training__item">
+                <div class="list-training__circle">
+                  <svg class="icon" width="40" height="40">
+                    <use xlink:href="#card" />
+                  </svg>
+                </div>
+                По окончании курса удостоверение установленного образца
+              </li>
+              <li class="list-training__item">
+                <div class="list-training__circle">
+                  <svg class="icon" width="40" height="40">
+                    <use xlink:href="#money" />
+                  </svg>
+                </div>
+                <strong>Стоимость:</strong> От 2500 Р
+              </li>
+              <li class="list-training__item">
+                <div class="list-training__circle">
+                  <svg class="icon" width="40" height="40">
+                    <use xlink:href="#school" />
+                  </svg>
+                </div>
+                <strong>Форматы обучения:</strong>
+                <ul class="list-training__list">
+                  <li>Очное</li>
+                  <li>С выездом специалиста</li>
+                  <li>Видеокурсы/вебинары</li>
+                </ul>
+              </li>
+            </ul>
+            <form class="form-accordion" action="">
+              <section class="form-accordion__container">
+                <h4 class="form-accordion__title">Остались вопросы?</h4>
+                <input class="form-accordion__control" type="text" placeholder="Имя">
+                <input class="form-accordion__control" type="text" placeholder="Телефон">
+                <button class="form-accordion__btn">проконсультироваться</button>
+              </section>
+            </form>
+          </div>
+        </section>
+        <section class="accordion__set">
+          <a class="accordion__title collapsed" role="tab" data-toggle="collapse" href="#collapse-6" aria-expanded="false" aria-controls="collapse-6">
+            <h3 class="name">ГО и ЧС</h3>
+            <svg class="arrow-down" width="30" height="20">
+              <use xlink:href="#arrow-down" />
+            </svg>
+          </a>
+          <div id="collapse-6" class="collapse" role="tabpanel" data-parent="#accordion">
+            <ul class="list-training">
+              <li class="list-training__item">
+                <div class="list-training__circle">
+                  <svg class="icon" width="40" height="40">
+                    <use xlink:href="#clock" />
+                  </svg>
+                </div>
+                <strong>Время обучения:</strong> 24-80 часов
+              </li>
+              <li class="list-training__item">
+                <div class="list-training__circle">
+                  <svg class="icon" width="40" height="40">
+                    <use xlink:href="#card" />
+                  </svg>
+                </div>
+                По окончании курса удостоверение установленного образца
+              </li>
+              <li class="list-training__item">
+                <div class="list-training__circle">
+                  <svg class="icon" width="40" height="40">
+                    <use xlink:href="#money" />
+                  </svg>
+                </div>
+                <strong>Стоимость:</strong> От 2500 Р
+              </li>
+              <li class="list-training__item">
+                <div class="list-training__circle">
+                  <svg class="icon" width="40" height="40">
+                    <use xlink:href="#school" />
+                  </svg>
+                </div>
+                <strong>Форматы обучения:</strong>
+                <ul class="list-training__list">
+                  <li>Очное</li>
+                  <li>С выездом специалиста</li>
+                  <li>Видеокурсы/вебинары</li>
+                </ul>
+              </li>
+            </ul>
+            <form class="form-accordion" action="">
+              <section class="form-accordion__container">
+                <h4 class="form-accordion__title">Остались вопросы?</h4>
+                <input class="form-accordion__control" type="text" placeholder="Имя">
+                <input class="form-accordion__control" type="text" placeholder="Телефон">
+                <button class="form-accordion__btn">проконсультироваться</button>
+              </section>
+            </form>
+          </div>
+        </section>
+        <section class="accordion__set">
+          <a class="accordion__title collapsed" role="tab" data-toggle="collapse" href="#collapse-7" aria-expanded="false" aria-controls="collapse-7">
+            <h3 class="name">Экологическая безопасность</h3>
+            <svg class="arrow-down" width="30" height="20">
+              <use xlink:href="#arrow-down" />
+            </svg>
+          </a>
+          <div id="collapse-7" class="collapse" role="tabpanel" data-parent="#accordion">
+            <ul class="list-training">
+              <li class="list-training__item">
+                <div class="list-training__circle">
+                  <svg class="icon" width="40" height="40">
+                    <use xlink:href="#clock" />
+                  </svg>
+                </div>
+                <strong>Время обучения:</strong> 24-80 часов
+              </li>
+              <li class="list-training__item">
+                <div class="list-training__circle">
+                  <svg class="icon" width="40" height="40">
+                    <use xlink:href="#card" />
+                  </svg>
+                </div>
+                По окончании курса удостоверение установленного образца
+              </li>
+              <li class="list-training__item">
+                <div class="list-training__circle">
+                  <svg class="icon" width="40" height="40">
+                    <use xlink:href="#money" />
+                  </svg>
+                </div>
+                <strong>Стоимость:</strong> От 2500 Р
+              </li>
+              <li class="list-training__item">
+                <div class="list-training__circle">
+                  <svg class="icon" width="40" height="40">
+                    <use xlink:href="#school" />
+                  </svg>
+                </div>
+                <strong>Форматы обучения:</strong>
+                <ul class="list-training__list">
+                  <li>Очное</li>
+                  <li>С выездом специалиста</li>
+                  <li>Видеокурсы/вебинары</li>
+                </ul>
+              </li>
+            </ul>
+            <form class="form-accordion" action="">
+              <section class="form-accordion__container">
+                <h4 class="form-accordion__title">Остались вопросы?</h4>
+                <input class="form-accordion__control" type="text" placeholder="Имя">
+                <input class="form-accordion__control" type="text" placeholder="Телефон">
+                <button class="form-accordion__btn">проконсультироваться</button>
+              </section>
+            </form>
+          </div>
+        </section>
+        <section class="accordion__set">
+          <a class="accordion__title collapsed" role="tab" data-toggle="collapse" href="#collapse-8" aria-expanded="false" aria-controls="collapse-8">
+            <h3 class="name">Промышленная безопасность</h3>
+            <svg class="arrow-down" width="30" height="20">
+              <use xlink:href="#arrow-down" />
+            </svg>
+          </a>
+          <div id="collapse-8" class="collapse" role="tabpanel" data-parent="#accordion">
+            <ul class="list-training">
+              <li class="list-training__item">
+                <div class="list-training__circle">
+                  <svg class="icon" width="40" height="40">
+                    <use xlink:href="#clock" />
+                  </svg>
+                </div>
+                <strong>Время обучения:</strong> 24-80 часов
+              </li>
+              <li class="list-training__item">
+                <div class="list-training__circle">
+                  <svg class="icon" width="40" height="40">
+                    <use xlink:href="#card" />
+                  </svg>
+                </div>
+                По окончании курса удостоверение установленного образца
+              </li>
+              <li class="list-training__item">
+                <div class="list-training__circle">
+                  <svg class="icon" width="40" height="40">
+                    <use xlink:href="#money" />
+                  </svg>
+                </div>
+                <strong>Стоимость:</strong> От 2500 Р
+              </li>
+              <li class="list-training__item">
+                <div class="list-training__circle">
+                  <svg class="icon" width="40" height="40">
+                    <use xlink:href="#school" />
+                  </svg>
+                </div>
+                <strong>Форматы обучения:</strong>
+                <ul class="list-training__list">
+                  <li>Очное</li>
+                  <li>С выездом специалиста</li>
+                  <li>Видеокурсы/вебинары</li>
+                </ul>
+              </li>
+            </ul>
+            <form class="form-accordion" action="">
+              <section class="form-accordion__container">
+                <h4 class="form-accordion__title">Остались вопросы?</h4>
+                <input class="form-accordion__control" type="text" placeholder="Имя">
+                <input class="form-accordion__control" type="text" placeholder="Телефон">
+                <button class="form-accordion__btn">проконсультироваться</button>
+              </section>
+            </form>
+          </div>
+        </section>
+        <section class="accordion__set">
+          <a class="accordion__title collapsed" role="tab" data-toggle="collapse" href="#collapse-9" aria-expanded="false" aria-controls="collapse-9">
+            <h3 class="name">Электробезопасность</h3>
+            <svg class="arrow-down" width="30" height="20">
+              <use xlink:href="#arrow-down" />
+            </svg>
+          </a>
+          <div id="collapse-9" class="collapse" role="tabpanel" data-parent="#accordion">
+            <ul class="list-training">
+              <li class="list-training__item">
+                <div class="list-training__circle">
+                  <svg class="icon" width="40" height="40">
+                    <use xlink:href="#clock" />
+                  </svg>
+                </div>
+                <strong>Время обучения:</strong> 24-80 часов
+              </li>
+              <li class="list-training__item">
+                <div class="list-training__circle">
+                  <svg class="icon" width="40" height="40">
+                    <use xlink:href="#card" />
+                  </svg>
+                </div>
+                По окончании курса удостоверение установленного образца
+              </li>
+              <li class="list-training__item">
+                <div class="list-training__circle">
+                  <svg class="icon" width="40" height="40">
+                    <use xlink:href="#money" />
+                  </svg>
+                </div>
+                <strong>Стоимость:</strong> От 2500 Р
+              </li>
+              <li class="list-training__item">
+                <div class="list-training__circle">
+                  <svg class="icon" width="40" height="40">
+                    <use xlink:href="#school" />
+                  </svg>
+                </div>
+                <strong>Форматы обучения:</strong>
+                <ul class="list-training__list">
+                  <li>Очное</li>
+                  <li>С выездом специалиста</li>
+                  <li>Видеокурсы/вебинары</li>
+                </ul>
+              </li>
+            </ul>
+            <form class="form-accordion" action="">
+              <section class="form-accordion__container">
+                <h4 class="form-accordion__title">Остались вопросы?</h4>
+                <input class="form-accordion__control" type="text" placeholder="Имя">
+                <input class="form-accordion__control" type="text" placeholder="Телефон">
+                <button class="form-accordion__btn">проконсультироваться</button>
+              </section>
+            </form>
+          </div>
+        </section>
+        <section class="accordion__set">
+          <a class="accordion__title collapsed" role="tab" data-toggle="collapse" href="#collapse-10" aria-expanded="false" aria-controls="collapse-10">
+            <h3 class="name">Работы на высоте</h3>
+            <svg class="arrow-down" width="30" height="20">
+              <use xlink:href="#arrow-down" />
+            </svg>
+          </a>
+          <div id="collapse-10" class="collapse" role="tabpanel" data-parent="#accordion">
+            <ul class="list-training">
+              <li class="list-training__item">
+                <div class="list-training__circle">
+                  <svg class="icon" width="40" height="40">
+                    <use xlink:href="#clock" />
+                  </svg>
+                </div>
+                <strong>Время обучения:</strong> 24-80 часов
+              </li>
+              <li class="list-training__item">
+                <div class="list-training__circle">
+                  <svg class="icon" width="40" height="40">
+                    <use xlink:href="#card" />
+                  </svg>
+                </div>
+                По окончании курса удостоверение установленного образца
+              </li>
+              <li class="list-training__item">
+                <div class="list-training__circle">
+                  <svg class="icon" width="40" height="40">
+                    <use xlink:href="#money" />
+                  </svg>
+                </div>
+                <strong>Стоимость:</strong> От 2500 Р
+              </li>
+              <li class="list-training__item">
+                <div class="list-training__circle">
+                  <svg class="icon" width="40" height="40">
+                    <use xlink:href="#school" />
+                  </svg>
+                </div>
+                <strong>Форматы обучения:</strong>
+                <ul class="list-training__list">
+                  <li>Очное</li>
+                  <li>С выездом специалиста</li>
+                  <li>Видеокурсы/вебинары</li>
+                </ul>
+              </li>
+            </ul>
+            <form class="form-accordion" action="">
+              <section class="form-accordion__container">
+                <h4 class="form-accordion__title">Остались вопросы?</h4>
+                <input class="form-accordion__control" type="text" placeholder="Имя">
+                <input class="form-accordion__control" type="text" placeholder="Телефон">
+                <button class="form-accordion__btn">проконсультироваться</button>
+              </section>
+            </form>
+          </div>
+        </section>
+      </div>
+    </section>
+  </div>
+
+
+
+	<footer class="page-footer">
+    <div class="page-footer__container">
+      <div class="page-footer__row">
+        <div class="page-footer__column">
+          <p class="copyright">© 2002. башпротек. консалтинг. юридические услуги без посредников.</p>
+          <p class="copyright">все права защищены</p>
+          <p class="copyright">отправляя любую форму на сайте, вы соглашаетесь с <ins>политикой конфиденциальности</ins> данного сайта.</p>
+        </div>
+        <div class="page-footer__column">
+          <p class="social">
+            <a href="#">facebook
+              <svg class="icon" width="25" height="25">
+                <use xlink:href="#facebook"/>
+              </svg>
+            </a>
+            <a href="#">instagram
+              <svg class="icon" width="25" height="25">
+                <use xlink:href="#im"/>
+              </svg>
+            </a>
+            <a href="#">lindenkin
+              <svg class="icon" width="25" height="25">
+                <use xlink:href="#lindk"/>
+              </svg>
+            </a>
+          </p>
+        </div>
+        <div class="page-footer__column">
+          <a class="logo-footer" href="index.html">
+            <img class="img-fluid" src="img/logo-footer.png" alt="Логотип">
+          </a>
+        </div>
+      </div>
+    </div>
+	</footer>
+	<script src="js/script.js"></script>
+</body>
+</html>
+

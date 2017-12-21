@@ -1,0 +1,38 @@
+.numbers {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-width: 360px;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+
+  &__phone {
+    font: @font-phone;
+    color: @white;
+    text-shadow: 0 0 1px @black;
+    margin: 20px;
+
+    &:hover {
+      color: @white;
+    }
+
+    @media(min-width: @screen-lg) {
+      margin: 0 35px 10px;
+    }
+  }
+
+  &__callback {
+    color: @white;
+    background: @color-btn;
+    border-radius: 50px;
+    border: 2px solid @white;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+
+}

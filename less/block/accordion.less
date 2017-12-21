@@ -1,0 +1,94 @@
+.accordion {
+  background: @white;
+
+  &__set {
+    transition: @transition-time;
+
+    &:hover {
+
+      .accordion__title {
+        background: @color-main-title;
+
+        .name {
+          padding-bottom: 30px;
+          color: @white;
+          text-shadow: 0 0 1px @black;
+        }
+      }
+
+      .collapsed .arrow-down {
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        height: 30px;
+        opacity: 1;
+        transition: @transition-time;
+      }
+    }
+  }
+
+  &__title {
+    position: relative;
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    color: @black;
+    padding: 25px 10px;
+    background: @color-warning;
+
+    .arrow-down {
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      fill: transparent;
+      stroke: @white;
+      height: 30px;
+      transition: @transition-time;
+      transform: rotate(90deg);
+      overflow: hidden;
+    }
+
+    .name {
+      font: @font-text;
+      color: @white;
+      text-shadow: 0 0 1px @black;
+      margin: 0;
+      padding-bottom: 30px;
+      transition: @transition-time;
+    }
+
+    &.collapsed {
+      background: @gray-lightest;
+      border-bottom: 1px solid @gray-lighten;
+
+      .arrow-down {
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        opacity: 0;
+        fill: transparent;
+        stroke: @white;
+        height: 30px;
+        transition: @transition-time;
+        transform: rotate(90deg);
+        overflow: hidden;
+      }
+
+      .name {
+        text-shadow: 0 0 0px @black;
+        color: @black;
+        padding-bottom: 0px;
+      }
+    }
+
+    &:hover {
+      color: @black;
+    }
+  }
+}
