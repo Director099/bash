@@ -31,10 +31,18 @@
     padding-right: 15px;
   }
 
+  &__column--4 {
+    &:extend(.col-md-4);
+  }
+
   &__title {
     text-align: center;
     .title();
     margin-bottom: 50px;
+
+    &--color {
+      color: @gray-darken;
+    }
   }
 
   .owl-dots {
@@ -51,6 +59,14 @@
         font-size: 20px;
         font-weight: 900;
       }
+    }
+  }
+
+  &--img-none {
+    background: none;
+
+    &::after {
+      background: @white;
     }
   }
 
